@@ -16,7 +16,7 @@ Scope {
             color: "transparent"
             WlrLayershell.layer: WlrLayer.Background
             screen: modelData
-            visible: Config.ready
+            visible: Config.ready && Config.options.background.wallpaperEnabled
 
             anchors {
                 top: true

@@ -47,11 +47,11 @@ BarModule {
 
                 Rectangle {
                     id: wsBox
-                    width: Config.options.bar.modules.workspaces.largeWorkspacesIcon
-                        ? ((index + 1) === Hyprland.focusedWorkspaceId ? 46 : 24)
-                        : ((index + 1) === Hyprland.focusedWorkspaceId ? 44 : 12)
+                    property int prefHeight: Config.options.bar.modules.workspaces.largeWorkspacesIcon ? 20 : 12
+                    property int prefWidth: Config.options.bar.modules.workspaces.largeWorkspacesIcon ? ((index + 1) === Hyprland.focusedWorkspaceId ? 46 : 24) : ((index + 1) === Hyprland.focusedWorkspaceId ? 44 : 12)
+                    width: prefWidth
 
-                    height: Config.options.bar.modules.workspaces.largeWorkspacesIcon ? 20 : 12
+                    height: prefHeight
                     radius: Appearance.rounding.small
 
                     Behavior on width { Anim {} }

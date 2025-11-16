@@ -6,7 +6,7 @@ import qs.modules.border
 import qs.modules.launcher
 import qs.modules.overlays
 import qs.modules.powerMenu
-
+import qs.modules.settings
 import QtQuick
 import Quickshell
 import Quickshell.Io
@@ -22,5 +22,6 @@ ShellRoot {
     GlobalProcesses{}
     ControlCenter{}
     Overlays{}
+    Settings{}
 
 }

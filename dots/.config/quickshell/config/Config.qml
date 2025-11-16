@@ -111,6 +111,7 @@ Singleton {
             }
 
             property JsonObject background: JsonObject {
+                property bool wallpaperEnabled: true
                 property url wallpaperPath: StandardPaths.writableLocation(StandardPaths.ConfigLocation) + "/quickshell/defaults/background/default_wallpaper.png"
                 property bool borderEnabled: false
                 property string clockTimeFormat: "hh:mm"
