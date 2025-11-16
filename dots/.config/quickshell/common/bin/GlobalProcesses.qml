@@ -22,6 +22,10 @@ Scope {
             genThemeColors.running = true
 
         }
+
+        function regenColors() {
+            genThemeColors.running = true
+        }
     }
 
     Process {

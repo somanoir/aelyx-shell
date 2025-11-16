@@ -7,7 +7,7 @@ import qs.core.appearance
 TextField {
   placeholderTextColor: Appearance.m3colors.m3outline
   font.family: Appearance.font.family.main
-  color: Appearance.syntaxHighlightingTheme
+  color: Appearance.m3colors.m3onSecondary
 
   cursorDelegate: StyledRect {
     id: cursor

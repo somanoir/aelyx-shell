@@ -91,7 +91,7 @@ Singleton {
                 property JsonObject modules: JsonObject {
                     property JsonObject workspaces: JsonObject {
                         property bool largeWorkspacesIcon: false
-                        property bool showNumbers: true
+                        property bool showNumbers: false
                         property int visibleWorkspaces: 8
                     }
                     property JsonObject clock: JsonObject {
@@ -119,22 +119,6 @@ Singleton {
                 property int clockY: 100
                 property bool showClock: true
             }
-
-            property JsonObject controlCenter: JsonObject {
-                property int radius: Appearance.rounding.normal
-            }
-            
-            property QtObject overview: QtObject {
-                property int rows: 2
-                property int columns: 5
-                property real scale: 0.16
-                property bool enable: true
-            }
-            
-            property QtObject hacks: QtObject {
-                property int arbitraryRaceConditionDelay: 150
-            }
-
         }
     }
 }

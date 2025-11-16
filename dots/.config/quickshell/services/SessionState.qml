@@ -13,5 +13,6 @@ Item {
     property bool mediaPlayerOpen: false
     property bool windowOverviewOpen: false
     property bool osdNeeded: false
+    property bool visible_settingsMenu: false 
     
 }

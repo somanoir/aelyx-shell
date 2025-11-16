@@ -131,23 +131,55 @@ PanelWindow {
                 // --- Top Section ---
                 RowLayout {
                     Layout.fillWidth: true
-                    spacing: Appearance.margin.large
 
                     ProfilePicture {}
 
                     ColumnLayout {
+                        Layout.fillWidth: true
+                        Layout.leftMargin: 20
                         Layout.alignment: Qt.AlignVCenter
-                        spacing: 0
+                        spacing: 2
 
-                        StyledText {
-                            text: SystemDetails.username
+                        StyledText { 
+                            text: SystemDetails.username 
                             font.pixelSize: Appearance.font.size.wildass - 10
                         }
 
                         RowLayout {
                             spacing: 8
-                            StyledText { text: SystemDetails.osIcon; font.pixelSize: Appearance.font.size.huge }
-                            StyledText { text: SystemDetails.uptime; font.pixelSize: Appearance.font.size.normal }
+
+                            StyledText {
+                                text: SystemDetails.osIcon
+                                font.pixelSize: Appearance.font.size.huge
+                            }
+
+                            StyledText {
+                                text: SystemDetails.uptime
+                                font.pixelSize: Appearance.font.size.normal
+                            }
+                        }
+                    }
+
+                    StyledRect {
+                        id: settingsbtncontainer
+                        color: Appearance.m3colors.m3paddingContainer
+                        radius: Appearance.rounding.normal
+                        implicitHeight: settingsButton.height + Appearance.margin.tiny
+                        implicitWidth: settingsButton.width + Appearance.margin.small
+                        Layout.alignment: Qt.AlignRight | Qt.AlignTop
+                        Layout.topMargin: 10
+                        Layout.leftMargin: 15
+
+                        MaterialSymbolButton {
+                            id: settingsButton
+                            icon: "settings"
+                            anchors.centerIn: parent
+                            iconSize: Appearance.font.size.wildass - 10
+
+                            onButtonClicked: {
+                                SessionState.controlCenterOpen = false
+                                SessionState.visible_settingsMenu = true
+                            }
                         }
                     }
                 }
@@ -210,7 +242,7 @@ PanelWindow {
 
                         StyledText {
                             animate: false
-                            text: Math.round(sink.volume * 100) + "%"
+                            text: Math.round(sink ? sink.volume * 100 : 0) + "%"
                             Layout.alignment: Qt.AlignRight
                         }
                     }

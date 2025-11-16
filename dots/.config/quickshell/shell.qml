@@ -5,6 +5,7 @@ import qs.modules.background
 import qs.modules.controlCenter
 import qs.modules.border
 import qs.modules.launcher
+import qs.modules.settings 
 import qs.modules.overlays
 import qs.modules.powerMenu
 import QtQuick
@@ -22,5 +23,6 @@ ShellRoot {
     GlobalProcesses{}
     ControlCenter{}
     Overlays{}
+    Settings{}
 
 }
