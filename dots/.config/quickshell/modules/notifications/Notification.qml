@@ -76,7 +76,7 @@ Scope {
 
             Repeater {
                 id: rep
-                model: Config.options.misc.notificationDaemonEnabled ? NotifServer.popups : []
+                model:(!Config.options.misc.dndEnabled && Config.options.misc.notificationDaemonEnabled) ? NotifServer.popups : []
 
                 NotificationChild {
                     id: child

@@ -101,6 +101,7 @@ Singleton {
 
             property JsonObject misc: JsonObject {
                 property bool notificationDaemonEnabled: true
+                property bool dndEnabled: false 
             }
             
             property JsonObject global: JsonObject {

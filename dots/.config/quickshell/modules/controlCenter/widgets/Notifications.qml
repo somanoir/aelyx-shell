@@ -12,8 +12,7 @@ StyledRect {
     height: 80
     radius: Appearance.rounding.verylarge
 
-    // Active state = Focus Mode ON
-    property bool isActive: false
+    property bool isActive: Config.options.misc.dndEnabled
     readonly property string themestatustext: isActive ? "Active" : "Inactive"
     property string themestatusicon: isActive ? "do_not_disturb_on" : "do_not_disturb_off"
 
@@ -23,17 +22,8 @@ StyledRect {
     // Grid friendly
     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
 
-    Process {
-        id: toggleDnd
-        running: false
-        command: []
-
-        function toggle() {
-            const cmd = isActive ? "-dn" : "-df";
-            toggleDnd.command = ["swaync-client", cmd];
-            toggleDnd.running = true;
-            root.isActive = !root.isActive;
-        }
+    function toggleDnd() {
+        Config.setNestedValue("misc.dndEnabled", !isActive)
     }
 
     // Icon background
@@ -79,6 +69,8 @@ StyledRect {
     MouseArea {
         anchors.fill: parent
         propagateComposedEvents: true
-        onClicked: toggleDnd.toggle()
+        onClicked: {
+            toggleDnd()
+        }
     }
 }

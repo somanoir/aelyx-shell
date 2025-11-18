@@ -8,8 +8,8 @@ import QtQuick
 import QtQuick.Layouts
 
 ContentMenu {
-    title: "Bar"
-    description: "Adjust how the bar behaves."
+    title: "Interface"
+    description: "Adjust the desktop's interface."
 
     ContentCard {
         StyledText {
